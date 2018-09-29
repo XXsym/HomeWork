@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/shape_search"
+        app:layout_constraintBottom_toBottomOf="@+id/main_add"
+        app:layout_constraintEnd_toStartOf="@+id/main_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/main_add" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/view"
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="#f8f8f8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+
+        <com.handsomexi.homework.view.BottomRow
+            android:id="@+id/main_brow1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:imagesrc="@mipmap/home"
+            app:text="主页" />
+
+        <com.handsomexi.homework.view.BottomRow
+            android:id="@+id/main_brow2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:imagesrc="@mipmap/lanmu"
+            app:text="分类" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9" />
+
+        <com.handsomexi.homework.view.BottomRow
+            android:id="@+id/main_brow3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:imagesrc="@mipmap/paper"
+            app:text="试卷" />
+
+        <com.handsomexi.homework.view.BottomRow
+            android:id="@+id/main_brow4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:imagesrc="@mipmap/mine"
+            app:text="我的" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/main_camera"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:srcCompat="@mipmap/camera" />
+
+    <com.handsomexi.homework.view.MainViewpager
+        android:id="@+id/main_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+
+    <ImageView
+        android:id="@+id/main_search"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:srcCompat="@mipmap/search" />
+
+    <EditText
+        android:id="@+id/main_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:cursorVisible="false"
+        android:hint="小新错题本"
+        android:inputType="textPersonName"
+        android:lines="1"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/main_add"
+        app:layout_constraintStart_toEndOf="@+id/main_search"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+
+
+    <ImageView
+        android:id="@+id/main_add"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_add_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="default_subject">
+        <item>语文</item>
+        <item>数学</item>
+        <item>英语</item>
+        <item>物理</item>
+        <item>化学</item>
+        <item>生物</item>
+        <item>历史</item>
+        <item>地理</item>
+        <item>政治</item>
+    </string-array>
+    <string-array name="all_subject">
+        <item>全部</item>
+        <item>语文</item>
+        <item>数学</item>
+        <item>英语</item>
+        <item>物理</item>
+        <item>化学</item>
+        <item>生物</item>
+        <item>历史</item>
+        <item>地理</item>
+        <item>政治</item>
+    </string-array>
+    <string-array name="default_shcoolyear">
+        <item>一年级</item>
+        <item>二年级</item>
+        <item>三年级</item>
+        <item>四年级</item>
+        <item>五年级</item>
+        <item>六年级</item>
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>高一</item>
+        <item>高二</item>
+        <item>高三</item>
+    </string-array>
+    <string-array name="all_shcoolyear">
+        <item>全部</item>
+        <item>一年级</item>
+        <item>二年级</item>
+        <item>三年级</item>
+        <item>四年级</item>
+        <item>五年级</item>
+        <item>六年级</item>
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>高一</item>
+        <item>高二</item>
+        <item>高三</item>
+    </string-array>
+    <string-array name="default_semester">
+        <item>上学期</item>
+        <item>下学期</item>
+    </string-array>
+    <string-array name="all_semester">
+        <item>全部</item>
+        <item>上学期</item>
+        <item>下学期</item>
+    </string-array>
+</resources>
