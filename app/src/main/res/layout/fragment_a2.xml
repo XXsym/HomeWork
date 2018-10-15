@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+    <com.handsomexi.homework.view.IndicatorView
+        android:id="@+id/indicatorView"
+        android:layout_width="4dp"
+        android:layout_height="15dp"
+        android:background="#009AEA"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/subject_recycle__list"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:background="#211e1e"
+        />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/content_recycler_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</LinearLayout>

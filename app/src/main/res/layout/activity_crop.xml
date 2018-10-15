@@ -7,16 +7,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.handsomexi.homework.view.EraserImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/crop_linear2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/aliceblue" />
+
     <com.theartofdev.edmodo.cropper.CropImageView
         android:id="@+id/crop_cropview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
         android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/crop_qblue"
+        app:layout_constraintBottom_toTopOf="@+id/crop_linear0"
+        app:layout_constraintEnd_toStartOf="@+id/crop_linear1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ProgressBar
         android:id="@+id/crop_pro"
@@ -32,63 +43,115 @@
         app:layout_constraintStart_toStartOf="@+id/crop_cropview"
         app:layout_constraintTop_toTopOf="@+id/crop_cropview" />
 
-    <TextView
-        android:id="@+id/crop_qred"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/crop_linear0"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:layout_marginEnd="24dp"
-        android:background="@color/black"
-        android:text="去红"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/crop_qblue"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/crop_qblue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:layout_marginEnd="24dp"
-        android:background="@color/black"
-        android:text="去蓝"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/crop_qother"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/crop_qother"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="45dp"
-        android:layout_marginEnd="24dp"
-        android:background="@color/black"
-        android:text="去噪"
-        android:textColor="@color/white"
-        android:textSize="18sp"
+        android:padding="14dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/crop_linear1"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageView
-        android:id="@+id/crop_rotate"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crop_sure"
-        app:srcCompat="@mipmap/rotate" />
+        <SeekBar
+            android:id="@+id/crop_seekbar0"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content" />
 
-    <ImageView
-        android:id="@+id/crop_sure"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="24dp"
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/crop_linear1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/sure" />
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/crop_sure"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@mipmap/sure" />
+
+        <ImageView
+            android:id="@+id/crop_rotate"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@mipmap/rotate" />
+
+        <TextView
+            android:id="@+id/crop_qred"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@color/black"
+            android:text="去红"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/crop_qblue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/black"
+            android:text="去蓝"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/crop_qother"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/black"
+            android:text="去噪"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/crop_linear2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/crop_sure1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/sure" />
+        <ImageView
+            android:id="@+id/crop_revoke"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/revoke" />
+        <com.handsomexi.homework.view.CircleWidthView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/crop_circlewidth"/>
+
+        <com.handsomexi.homework.view.VerticalSeekBar
+            android:layout_marginTop="20dp"
+            android:id="@+id/crop_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

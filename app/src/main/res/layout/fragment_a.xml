@@ -14,7 +14,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tabIndicatorHeight="3dp"
-        app:tabTextColor="@color/black_translucent"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabTextColor="@color/black"
         app:tabSelectedTextColor="@color/md_teal_A700"
         app:tabIndicatorColor="@color/md_teal_A700"/>
 

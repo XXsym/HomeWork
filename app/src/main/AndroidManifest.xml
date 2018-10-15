@@ -29,9 +29,10 @@
             android:screenOrientation="landscape"/>
         <activity android:name=".activity.CropActivity"
             android:screenOrientation="landscape"/>
-        <activity android:name=".activity.EraserActivity"
-            android:screenOrientation="landscape"/>
         <activity android:name=".activity.IntroActivity"/>
+        <activity android:name=".activity.SaveSubjectActivity"/>
+        <activity android:name=".activity.ChangPasswordActivity"/>
+        <activity android:name=".activity.TestActivity"/>
 
 
 

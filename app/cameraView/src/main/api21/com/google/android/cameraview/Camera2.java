@@ -530,7 +530,7 @@ class Camera2 extends CameraViewImpl {
                         CaptureRequest.CONTROL_AF_MODE_OFF);
             } else {
                 mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE,
-                        CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
+                        CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_VIDEO);
             }
         } else {
             mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE,

@@ -2,6 +2,7 @@ package com.handsomexi.homework.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -16,6 +17,15 @@ import com.handsomexi.homework.util.Util;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
 public class CameraActivity extends SwipeBackActivity {
@@ -25,6 +35,7 @@ public class CameraActivity extends SwipeBackActivity {
     @BindView(R.id.camera_flash)
     ImageView imageView;
 
+    Disposable disposable;
 
     @OnClick({R.id.camera_album,R.id.camera_flash,R.id.camera_paizhao})
     void onClick(View view){
@@ -68,7 +79,6 @@ public class CameraActivity extends SwipeBackActivity {
             public void onCameraOpened(CameraView cameraView) {
                 super.onCameraOpened(cameraView);
                 cameraView.setAspectRatio(AspectRatio.of(1920,1080));//设置图片尺寸
-                cameraView.setAutoFocus(true);//自动对焦
             }
 
             @Override
@@ -79,6 +89,7 @@ public class CameraActivity extends SwipeBackActivity {
             @Override
             public void onPictureTaken(CameraView cameraView, byte[] data) {//在这里保存拍到的图片
                 super.onPictureTaken(cameraView, data);
+                cameraView.setFlash(CameraView.FLASH_OFF);
                 String filePath = Util.getNewPicFile().getPath();
                 boolean isSuccess = FileIOUtils.writeFileFromBytesByStream(filePath,data);
                 if(isSuccess){
@@ -89,6 +100,7 @@ public class CameraActivity extends SwipeBackActivity {
                 finish();
             }
         });
+       // initCheckFocus();
     }
 
     @Override
@@ -108,17 +120,56 @@ public class CameraActivity extends SwipeBackActivity {
     protected void onResume() {
         super.onResume();
         cameraView.start();
+        cameraView.setAutoFocus(false);
+        cameraView.setAutoFocus(true);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         cameraView.stop();
+        if(disposable!=null)
+            disposable.dispose();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         cameraView.stop();
+    }
+
+    void initCheckFocus(){
+        Observable.create((ObservableOnSubscribe<Boolean>) emitter -> {
+            while (true){
+                try{
+                    Thread.sleep(1000);
+                }catch (Exception e){
+                    Log.e("camera",e.toString());
+                }
+                emitter.onNext(true);
+            }
+        }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Boolean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        disposable = d;
+                    }
+
+                    @Override
+                    public void onNext(Boolean aBoolean) {
+                        cameraView.setAutoFocus(false);
+                        cameraView.setAutoFocus(true);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 }

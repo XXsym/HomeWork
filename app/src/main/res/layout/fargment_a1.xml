@@ -64,8 +64,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="@color/black"
         android:text="推荐科目"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/a1_img1"
         app:layout_constraintStart_toStartOf="@+id/a1_img1"
         app:layout_constraintTop_toBottomOf="@+id/a1_img1" />
@@ -75,8 +76,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="@color/black"
         android:text="每日一练"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/a1_img2"
         app:layout_constraintStart_toStartOf="@+id/a1_img2"
         app:layout_constraintTop_toBottomOf="@+id/a1_img2" />
@@ -86,8 +88,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="@color/black"
         android:text="复习"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/a1_img3"
         app:layout_constraintStart_toStartOf="@+id/a1_img3"
         app:layout_constraintTop_toBottomOf="@+id/a1_img3" />
@@ -97,8 +100,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="@color/black"
         android:text="签到"
+        android:textColor="@color/black"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/a1_img4"
         app:layout_constraintStart_toStartOf="@+id/a1_img4"
         app:layout_constraintTop_toBottomOf="@+id/a1_img4" />

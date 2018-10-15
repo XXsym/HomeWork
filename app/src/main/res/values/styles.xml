@@ -9,6 +9,16 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">false</item>
     </style>
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">16sp</item>
+    </style>
 
-
+    <style name="RatingStyle" parent="@android:style/Widget.RatingBar">
+        <!-- 定义图片 -->
+        <item name="android:progressDrawable">@mipmap/icon_review</item>
+        <!--根据自定义星星图片的大小,设置相应的值,否则可能显示不全  -->
+        <item name="android:numColumns">5</item>
+        <item name="android:isIndicator"> false</item>
+        <item name="android:clickable">true </item>
+    </style>
 </resources>
