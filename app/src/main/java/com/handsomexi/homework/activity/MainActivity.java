@@ -8,10 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.blankj.utilcode.util.SPUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.handsomexi.homework.R;
 import com.handsomexi.homework.adapter.FragmentAdapter;
 import com.handsomexi.homework.bean.HomeWorkBean;
@@ -93,16 +91,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (requestCode) {
             case 666: {//Camera
                 if (resultCode == 1) {
-                    data.setClass(this, CropActivity.class);
-                    startActivityForResult(data, 888);
-                } else {
-                    ToastUtils.showShort("用户取消或者拍照失败"+requestCode);
+                    data.setClass(this, AdjustActivity.class);
+                    startActivity(data);
                 }
                 break;
-            }
-            case 888: {
-                if (resultCode == 1) {
-                }
             }
         }
     }

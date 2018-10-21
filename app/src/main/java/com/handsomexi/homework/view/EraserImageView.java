@@ -1,6 +1,7 @@
 package com.handsomexi.homework.view;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -71,6 +72,12 @@ public class EraserImageView extends AppCompatImageView {
 
     public void setPaintWidth(float width){
         currentWidth = width;
+    }
+    public Bitmap getBitmap(){
+        Bitmap bmp = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.RGB_565);
+        Canvas c = new Canvas(bmp);
+        draw(c);
+        return bmp;
     }
 
     public void revoke(){

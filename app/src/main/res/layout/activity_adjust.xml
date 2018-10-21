@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.handsomexi.homework.view.EraserImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/crop_linear1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/aliceblue" />
+
+
+    <ProgressBar
+        android:id="@+id/crop_pro"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+
+    <LinearLayout
+        android:id="@+id/crop_linear1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/adjust_sure"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:src="@mipmap/sure" />
+
+        <com.handsomexi.homework.view.BottomRow
+            android:id="@+id/adjust_b1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            app:imagesrc="@mipmap/eraser"
+            app:img_width="40dp"
+            app:select="false"
+            app:select_color="@color/green"
+            app:text="橡皮擦"
+            app:text_size="16sp"
+            app:unselect_color="@color/white" />
+
+        <com.handsomexi.homework.view.BottomRow
+            android:id="@+id/adjust_b2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            app:imagesrc="@mipmap/wipecolor"
+            app:img_width="40dp"
+            app:select="false"
+            app:select_color="@color/green"
+            app:text="去色"
+            app:text_size="16sp"
+            app:unselect_color="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/adjust_linear2"
+        android:padding="5dp"
+        android:background="#a2a2a2"
+        android:alpha="0.8"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/crop_linear1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.handsomexi.homework.view.BottomRow
+            android:id="@+id/adjust_revoke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:imagesrc="@mipmap/revoke"
+            app:img_width="40dp"
+            app:text="撤销"
+            app:select_color="@color/white"
+            app:text_size="13sp"
+            app:select="true"/>
+
+        <com.handsomexi.homework.view.CircleWidthView
+            android:id="@+id/crop_circlewidth"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp" />
+
+        <com.handsomexi.homework.view.VerticalSeekBar
+            android:id="@+id/crop_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/adjust_linear3"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:alpha="0.8"
+        android:background="#a2a2a2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/crop_linear1"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.handsomexi.homework.view.BottomRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/adjust_wipered"
+            app:imagesrc="@mipmap/redpen"
+            app:img_width="40dp"
+            app:text="去红"
+            app:changeimg="false"
+            app:select_color="@color/orange"
+            app:unselect_color="@color/white"
+            app:text_size="13sp" />
+        <com.handsomexi.homework.view.BottomRow
+            android:layout_marginTop="10dp"
+            android:id="@+id/adjust_wipeblue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:imagesrc="@mipmap/bluepen"
+            app:img_width="40dp"
+            app:changeimg="false"
+            app:text="去蓝"
+            app:select_color="@color/orange"
+            app:unselect_color="@color/white"
+            app:text_size="13sp" />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

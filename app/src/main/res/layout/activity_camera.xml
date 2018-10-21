@@ -2,21 +2,29 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/black"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.theartofdev.edmodo.cropper.CropImageView
+        android:id="@+id/camera_cropview"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/camera_linear2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <com.google.android.cameraview.CameraView
         android:id="@+id/camera_cameraView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        app:flash="off"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:autoFocus="true"
         app:facing="back"
+        app:flash="off"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/camera_paizhao"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,38 +34,73 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/camera_cameraView"
         app:layout_constraintEnd_toEndOf="@+id/camera_cameraView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/camera_cameraView"
         app:layout_constraintTop_toTopOf="@+id/camera_cameraView" />
 
-    <ImageView
-        android:id="@+id/camera_paizhao"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
+    <LinearLayout
+        android:id="@+id/camera_linear1"
+        android:layout_width="86dp"
+        android:background="@color/trans"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/paizhao2" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/camera_album"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/camera_paizhao"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@mipmap/gllary" />
 
-    <ImageView
-        android:id="@+id/camera_flash"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="30dp"
+        <ImageView
+            android:id="@+id/camera_album"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:src="@mipmap/gllary" />
+
+        <ImageView
+            android:id="@+id/camera_paizhao"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@mipmap/paizhao2" />
+
+        <ImageView
+            android:id="@+id/camera_flash"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:src="@mipmap/flash" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/camera_linear2"
+        android:layout_width="86dp"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/camera_paizhao"
-        app:srcCompat="@mipmap/flash" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:id="@+id/camera_sure"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            app:srcCompat="@mipmap/sure" />
+
+        <ImageView
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:id="@+id/camera_rotate"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            app:srcCompat="@mipmap/rotate" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -4,6 +4,7 @@ apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 28
     defaultConfig {
+        multiDexEnabled true
         applicationId "com.handsomexi.homework"
         minSdkVersion 19
         targetSdkVersion 28
@@ -72,4 +73,11 @@ dependencies {
     implementation 'com.google.android:flexbox:0.3.2'
     //opencv
     implementation project(path: ':openCVLibrary343')
+    //二维码扫描
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.2.5'
+    //友孟推送
+    implementation 'com.umeng.sdk:common:1.5.3'
+    implementation 'com.umeng.sdk:utdid:1.1.5.3'
+    implementation group: 'com.umeng.sdk', name: 'push', version: '4.2.0'
+
 }
